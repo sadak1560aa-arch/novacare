@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>نوفا كير — رفيقك الذكي لصيانة الهاتف</title>
+  <style>
+    /* [نفس تنسيقات CSS التي أرسلتها لك سابقاً] */
+    *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+    html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Tajawal','Cairo',system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+    body{margin:0;line-height:inherit;background:#050914;color:#f8f5eb;overflow-x:clip}
+    h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}
+    a{color:inherit;text-decoration:inherit}
+    b,strong{font-weight:bolder}
+    button,input,select{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}
+    button,select{text-transform:none}
+    button{-webkit-appearance:button;background-color:transparent;background-image:none;cursor:pointer}
+    blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}
+    ol,ul,menu{list-style:none;margin:0;padding:0}
+    input::placeholder{opacity:1;color:#9ca3af}
+    :disabled{cursor:default}
+    img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}
+    img,video{max-width:100%;height:auto}
+    .pointer-events-none{pointer-events:none}.pointer-events-auto{pointer-events:auto}
+    .fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}
+    .inset-0{inset:0}.inset-x-0{left:0;right:0}.inset-x-3{left:.75rem;right:.75rem}
+    .-bottom-16{bottom:-4rem}.-left-10{left:-2.5rem}.-left-24{left:-6rem}.-left-3{left:-.75rem}.-right-2{right:-.5rem}.-top-10{top:-2.5rem}.-top-24{top:-6rem}
+    .bottom-0{bottom:0}.bottom-24{bottom:6rem}.bottom-8{bottom:2rem}
+    .left-1{left:.25rem}.left-2{left:.5rem}.left-3{left:.75rem}.left-6{left:1.5rem}
+    .right-10{right:2.5rem}.right-3{right:.75rem}.right-4{right:1rem}.right-\[10\%\]{right:10%}
+    .top-0{top:0}.top-1{top:.25rem}.top-1\/2{top:50%}.top-1\/3{top:33.333333%}.top-2{top:.5rem}.top-5{top:1.25rem}
+    .top-\[calc\(var\(--safe-area-inset-top\)\+0\.75rem\)\]{top:calc(var(--safe-area-inset-top) + .75rem)}.top-\[var\(--safe-area-inset-top\)\]{top:var(--safe-area-inset-top)}
+    .z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.z-\[60\]{z-index:60}
+    .mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-3{margin-bottom:.75rem}.mb-5{margin-bottom:1.25rem}.mr-auto{margin-right:auto}
+    .mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-7{margin-top:1.75rem}.mt-auto{margin-top:auto}
+    .block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}
+    .h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-2{height:.5rem}.h-20{height:5rem}.h-3{height:.75rem}.h-36{height:9rem}.h-4{height:1rem}.h-44{height:11rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-72{height:18rem}.h-9{height:2.25rem}.h-full{height:100%}.h-screen{height:100vh}
+    .max-h-\[70vh\]{max-height:70vh}.min-h-screen{min-height:100vh}
+    .w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-2{width:.5rem}.w-20{width:5rem}.w-36{width:9rem}.w-44{width:11rem}.w-5{width:1.25rem}.w-72{width:18rem}.w-9{width:2.25rem}.w-full{width:100%}.min-w-0{min-width:0}
+    .max-w-\[1100px\]{max-width:1100px}.max-w-\[1500px\]{max-width:1500px}.max-w-\[260px\]{max-width:260px}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}
+    .flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-y-1\/2{transform:translateY(-50%)}.-rotate-90{transform:rotate(-90deg)}.scale-110{transform:scale(1.1)}
+    @keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}
+    .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+    .flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.content-start{align-content:flex-start}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-between{justify-content:space-between}
+    .gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}
+    .space-y-1>:not([hidden])~:not([hidden]){margin-top:.25rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}.space-y-5>:not([hidden])~:not([hidden]){margin-top:1.25rem}
+    .overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[1\.8rem\]{border-radius:1.8rem}.rounded-\[2\.6rem\]{border-radius:2.6rem}.rounded-\[2rem\]{border-radius:2rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:.75rem}
+    .border{border-width:1px}.border-\[7px\]{border-width:7px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}
+    .border-\[\#202a4c\]{border-color:#202a4c}.border-\[\#38e6d6\]\/50{border-color:rgba(56,230,214,.5)}.border-\[\#42e08d\]\/30{border-color:rgba(66,224,141,.3)}.border-\[\#e8b84b\]\/25{border-color:rgba(232,184,75,.25)}.border-\[\#e8b84b\]\/40{border-color:rgba(232,184,75,.4)}.border-\[\#ff6b7a\]\/40{border-color:rgba(255,107,122,.4)}.border-white\/10{border-color:rgba(255,255,255,.1)}.border-white\/15{border-color:rgba(255,255,255,.15)}.border-white\/20{border-color:rgba(255,255,255,.2)}
+    .bg-\[\#071022\]{background-color:#071022}.bg-\[\#080e23\]\/85{background-color:rgba(8,14,35,.85)}.bg-\[\#080e23\]\/90{background-color:rgba(8,14,35,.9)}.bg-\[\#080e23\]\/95{background-color:rgba(8,14,35,.95)}.bg-\[\#0a1126\]{background-color:#0a1126}.bg-\[\#0c132a\]{background-color:#0c132a}.bg-\[\#111a38\]{background-color:#111a38}.bg-\[\#111a38\]\/95{background-color:rgba(17,26,56,.95)}.bg-\[\#38e6d6\]{background-color:#38e6d6}.bg-\[\#38e6d6\]\/25{background-color:rgba(56,230,214,.25)}.bg-\[\#42e08d\]{background-color:#42e08d}.bg-\[\#42e08d\]\/10{background-color:rgba(66,224,141,.1)}.bg-\[\#42e08d\]\/15{background-color:rgba(66,224,141,.15)}.bg-\[\#4f7bff\]\/15{background-color:rgba(79,123,255,.15)}.bg-\[\#e8b84b\]{background-color:#e8b84b}.bg-\[\#e8b84b\]\/10{background-color:rgba(232,184,75,.1)}.bg-\[\#e8b84b\]\/12{background-color:rgba(232,184,75,.12)}.bg-\[\#e8b84b\]\/15{background-color:rgba(232,184,75,.15)}.bg-\[\#e8b84b\]\/25{background-color:rgba(232,184,75,.25)}.bg-\[\#ff6b7a\]\/10{background-color:rgba(255,107,122,.1)}.bg-\[\#ff6b7a\]\/15{background-color:rgba(255,107,122,.15)}.bg-\[var\(--bg\)\]{background-color:var(--bg)}.bg-black\/70{background-color:rgba(0,0,0,.7)}.bg-white{background-color:#fff}.bg-white\/10{background-color:rgba(255,255,255,.1)}.bg-white\/15{background-color:rgba(255,255,255,.15)}.bg-white\/5{background-color:rgba(255,255,255,.05)}
+    .bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.bg-gradient-to-l{background-image:linear-gradient(to left,var(--tw-gradient-stops))}
+    .from-\[\#152452\]{--tw-gradient-from:#152452;--tw-gradient-to:rgba(21,36,82,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#182654\]{--tw-gradient-from:#182654;--tw-gradient-to:rgba(24,38,84,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#42e08d\]{--tw-gradient-from:#42e08d;--tw-gradient-to:rgba(66,224,141,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#e8b84b\]{--tw-gradient-from:#e8b84b;--tw-gradient-to:rgba(232,184,75,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#e8b84b\]\/15{--tw-gradient-from:rgba(232,184,75,.15);--tw-gradient-to:rgba(232,184,75,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#e8b84b\]\/20{--tw-gradient-from:rgba(232,184,75,.2);--tw-gradient-to:rgba(232,184,75,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#ff6b7a\]{--tw-gradient-from:#ff6b7a;--tw-gradient-to:rgba(255,107,122,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-\[\#ffe8a5\]{--tw-gradient-from:#ffe8a5;--tw-gradient-to:rgba(255,232,165,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
+    .via-\[\#0d1739\]{--tw-gradient-to:rgba(13,23,57,0);--tw-gradient-stops:var(--tw-gradient-from),#0d1739 var(--tw-gradient-via-position),var(--tw-gradient-to)}
+    .to-\[\#050a1e\]{--tw-gradient-to:#050a1e}.to-\[\#38e6d6\]{--tw-gradient-to:#38e6d6}.to-\[\#38e6d6\]\/10{--tw-gradient-to:rgba(56,230,214,.1)}.to-\[\#b67a10\]{--tw-gradient-to:#b67a10}.to-\[\#ffb34d\]{--tw-gradient-to:#ffb34d}.to-black{--tw-gradient-to:#000}.to-transparent{--tw-gradient-to:transparent}
+    .p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}
+    .px-2{padding-left:.5rem;padding-right:.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}
+    .py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}
+    .pb-28{padding-bottom:7rem}.pb-4{padding-bottom:1rem}.pb-\[max\(0\.75rem\2c env\(safe-area-inset-bottom\)\)\]{padding-bottom:max(.75rem,env(safe-area-inset-bottom))}.pl-4{padding-left:1rem}.pr-11{padding-right:2.75rem}.pt-2{padding-top:.5rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}
+    .text-center{text-align:center}.text-right{text-align:right}
+    .text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-7xl{font-size:4.5rem;line-height:1}
+    .text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}
+    .font-black{font-weight:900}.font-bold{font-weight:700}
+    .leading-5{line-height:1.25rem}.leading-6{line-height:1.5rem}.leading-7{line-height:1.75rem}.leading-\[1\.15\]{line-height:1.15}.leading-none{line-height:1}.leading-tight{line-height:1.25}
+    .tracking-\[\.25em\]{letter-spacing:.25em}.tracking-widest{letter-spacing:.1em}
+    .text-\[\#38e6d6\]{color:#38e6d6}.text-\[\#42e08d\]{color:#42e08d}.text-\[\#4f7bff\]{color:#4f7bff}.text-\[\#a9b4d3\]{color:#a9b4d3}.text-\[\#c084fc\]{color:#c084fc}.text-\[\#c7cede\]{color:#c7cede}.text-\[\#c8d7cb\]{color:#c8d7cb}.text-\[\#e8b84b\]{color:#e8b84b}.text-\[\#f7dc8f\]{color:#f7dc8f}.text-\[\#ff6b7a\]{color:#ff6b7a}.text-\[\#ff8f99\]{color:#ff8f99}.text-\[var\(--text\)\]{color:var(--text)}.text-black{color:#000}.text-white{color:#fff}
+    .accent-\[\#e8b84b\]{accent-color:#e8b84b}
+    .shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}.shadow-\[inset_0_0_0_1px_rgba\(232\2c 184\2c 75\2c \.35\)\]{box-shadow:inset 0 0 0 1px rgba(232,184,75,.35)}.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+    .blur-3xl{filter:blur(64px)}.backdrop-blur-sm{backdrop-filter:blur(4px)}.backdrop-blur-xl{backdrop-filter:blur(24px)}
+    .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-700{transition-duration:700ms}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}
+    
+    :root{--bg:#050914;--surface:#0c132a;--surface2:#111a38;--line:rgba(255,255,255,.11);--text:#f8f5eb;--muted:#a9b4d3;--gold:#e8b84b;--gold2:#f7dc8f;--cyan:#38e6d6;--blue:#4f7bff;--green:#42e08d;--red:#ff6b7a;--orange:#ffb34d;--safe-area-inset-top:env(safe-area-inset-top,0px)}
+    @media (prefers-color-scheme:dark){:root{--bg:#030614;--surface:#0a1126;--surface2:#101936}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Tajawal','Cairo',system-ui,sans-serif;overflow-x:clip}
+    button,input,select{font-family:inherit}
+    .glass{background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));border:1px solid var(--line);backdrop-filter:blur(18px);box-shadow:0 18px 45px rgba(0,0,0,.22)}
+    .gold-text{background:linear-gradient(90deg,#f9e2a3,#dfa62f 55%,#58f0e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .gold-btn{background:linear-gradient(135deg,#ffe8a5,#dfa62f 55%,#b67a10);color:#1a1002;box-shadow:0 10px 28px rgba(232,184,75,.32)}
+    .cyan-btn{background:linear-gradient(135deg,#6ff7e8,#2aa9ff);color:#031418;box-shadow:0 10px 28px rgba(56,230,214,.22)}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+    @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(56,230,214,.28)}50%{box-shadow:0 0 0 16px rgba(56,230,214,0)}}
+    @keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .rise{animation:rise .45s ease both}
+    .scan-line{height:8px;border-radius:9999px;background:linear-gradient(90deg,#e8b84b,#38e6d6,#4f7bff,#e8b84b);background-size:200% 100%;animation:shimmer 1.4s linear infinite}
+    .no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}
+    input[type=range]{accent-color:#e8b84b}input,select{outline:none}input:focus,select:focus{border-color:#e8b84b!important;box-shadow:0 0 0 3px rgba(232,184,75,.16)}
+    .hover\:-translate-y-1:hover{transform:translateY(-.25rem)}.hover\:border-\[\#38e6d6\]\/50:hover{border-color:rgba(56,230,214,.5)}.hover\:border-\[\#e8b84b\]\/50:hover{border-color:rgba(232,184,75,.5)}.hover\:bg-white\/5:hover{background-color:rgba(255,255,255,.05)}.hover\:text-white:hover{color:#fff}
+    .disabled\:bg-\[\#42e08d\]:disabled{background-color:#42e08d}.disabled\:text-white:disabled{color:#fff}.disabled\:opacity-60:disabled{opacity:.6}
+    @media (min-width:640px){
+      .sm\:left-auto{left:auto}.sm\:right-5{right:1.25rem}.sm\:col-span-2{grid-column:span 2/span 2}.sm\:block{display:block}.sm\:w-\[360px\]{width:360px}
+      .sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .sm\:gap-4{gap:1rem}.sm\:p-4{padding:1rem}.sm\:p-6{padding:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-6{padding-top:1.5rem}
+      .sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}
+    }
+    @media (min-width:768px){.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (min-width:1024px){
+      .lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .lg\:grid-cols-\[\.9fr_1\.1fr\]{grid-template-columns:.9fr 1.1fr}.lg\:grid-cols-\[1\.25fr_\.75fr\]{grid-template-columns:1.25fr .75fr}.lg\:grid-cols-\[1fr_1\.2fr\]{grid-template-columns:1fr 1.2fr}.lg\:grid-cols-\[1fr_1\.4fr\]{grid-template-columns:1fr 1.4fr}
+      .lg\:pb-8{padding-bottom:2rem}.lg\:pl-8{padding-left:2rem}
+    }
+    @media (min-width:1280px){.xl\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}}
+    @media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+    :focus-visible{outline:2px solid #e8b84b;outline-offset:2px}
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React و ReactDOM (مضمنان بالكامل بدون إنترنت) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <!-- Babel لترجمة كود JSX في المتصفح (مضمن) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel" data-presets="react">
+    const { useState, useEffect, useMemo, useRef, useCallback } = React;
+    const h = React.createElement;
+
+    // أيقونات
+    const SvgIcon = (props) => h("svg", { xmlns:"http://www.w3.org/2000/svg", width:props.size||24, height:props.size||24, viewBox:"0 0 24 24", fill:"none", stroke:"currentColor", strokeWidth:2, strokeLinecap:"round", strokeLinejoin:"round", className:"lucide "+(props.className||""), "aria-hidden":"true" },
+      props.path.map((pair, i) => h(pair[0], { key:i, ...pair[1] }))
+    );
+    const makeIcon = (path) => (p) => h(SvgIcon, { ...p, path });
+    const Activity = makeIcon([["path",{d:"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"}]]);
+    const BatteryCharging = makeIcon([["path",{d:"M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"}],["path",{d:"M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"}],["path",{d:"m11 7-3 5h4l-3 5"}],["line",{x1:22,x2:22,y1:11,y2:13}]]);
+    const Bell = makeIcon([["path",{d:"M10.268 21a2 2 0 0 0 3.464 0"}],["path",{d:"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"}]]);
+    const ChevronLeft = makeIcon([["path",{d:"m15 18-6-6 6-6"}]]);
+    const CircleCheck = makeIcon([["circle",{cx:12,cy:12,r:10}],["path",{d:"m9 12 2 2 4-4"}]]);
+    const Cpu = makeIcon([["rect",{width:16,height:16,x:4,y:4,rx:2}],["rect",{width:6,height:6,x:9,y:9,rx:1}],["path",{d:"M15 2v2"}],["path",{d:"M15 20v2"}],["path",{d:"M2 15h2"}],["path",{d:"M2 9h2"}],["path",{d:"M20 15h2"}],["path",{d:"M20 9h2"}],["path",{d:"M9 2v2"}],["path",{d:"M9 20v2"}]]);
+    const Ellipsis = makeIcon([["circle",{cx:12,cy:12,r:1}],["circle",{cx:19,cy:12,r:1}],["circle",{cx:5,cy:12,r:1}]]);
+    const HardDrive = makeIcon([["line",{x1:22,x2:2,y1:12,y2:12}],["path",{d:"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"}],["line",{x1:6,x2:6.01,y1:16,y2:16}],["line",{x1:10,x2:10.01,y1:16,y2:16}]]);
+    const HistoryIcon = makeIcon([["path",{d:"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"}],["path",{d:"M3 3v5h5"}],["path",{d:"M12 7v5l4 2"}]]);
+    const House = makeIcon([["path",{d:"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"}],["path",{d:"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"}]]);
+    const Lightbulb = makeIcon([["path",{d:"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"}],["path",{d:"M9 18h6"}],["path",{d:"M10 22h4"}]]);
+    const MemoryStick = makeIcon([["path",{d:"M6 19v-3"}],["path",{d:"M10 19v-3"}],["path",{d:"M14 19v-3"}],["path",{d:"M18 19v-3"}],["path",{d:"M8 11V9"}],["path",{d:"M16 11V9"}],["path",{d:"M12 11V9"}],["path",{d:"M2 15h20"}],["path",{d:"M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1.1a2 2 0 0 0 0 3.837V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5.1a2 2 0 0 0 0-3.837Z"}]]);
+    const Play = makeIcon([["polygon",{points:"6 3 20 12 6 21 6 3"}]]);
+    const RefreshCw = makeIcon([["path",{d:"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"}],["path",{d:"M21 3v5h-5"}],["path",{d:"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"}],["path",{d:"M8 16H3v5"}]]);
+    const ScanLine = makeIcon([["path",{d:"M3 7V5a2 2 0 0 1 2-2h2"}],["path",{d:"M17 3h2a2 2 0 0 1 2 2v2"}],["path",{d:"M21 17v2a2 2 0 0 1-2 2h-2"}],["path",{d:"M7 21H5a2 2 0 0 1-2-2v-2"}],["path",{d:"M7 12h10"}]]);
+    const Search = makeIcon([["circle",{cx:11,cy:11,r:8}],["path",{d:"m21 21-4.3-4.3"}]]);
+    const ShieldCheck = makeIcon([["path",{d:"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],["path",{d:"m9 12 2 2 4-4"}]]);
+    const Smartphone = makeIcon([["rect",{width:14,height:20,x:5,y:2,rx:2,ry:2}],["path",{d:"M12 18h.01"}]]);
+    const Sparkles = makeIcon([["path",{d:"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"}],["path",{d:"M20 3v4"}],["path",{d:"M22 5h-4"}],["path",{d:"M4 17v2"}],["path",{d:"M5 18H3"}]]);
+    const Thermometer = makeIcon([["path",{d:"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"}]]);
+    const Trash2 = makeIcon([["path",{d:"M3 6h18"}],["path",{d:"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"}],["path",{d:"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"}],["line",{x1:10,x2:10,y1:11,y2:17}],["line",{x1:14,x2:14,y1:11,y2:17}]]);
+    const XIcon = makeIcon([["path",{d:"M18 6 6 18"}],["path",{d:"m6 6 12 12"}]]);
+    const Zap = makeIcon([["path",{d:"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"}]]);
+
+    // البيانات
+    const APPS = [
+      { id: 1, name: 'تطبيق الصور', cat: 'وسائط', size: '2.4 غ.ب', usage: 'يوميًا', status: 'نشط', color: '#38e6d6' },
+      { id: 2, name: 'متصفح الويب', cat: 'إنترنت', size: '840 م.ب', usage: 'كل ساعة', status: 'نشط', color: '#4f7bff' },
+      { id: 3, name: 'لعبة المغامرة', cat: 'ألعاب', size: '3.1 غ.ب', usage: 'أسبوعيًا', status: 'نشط', color: '#e8b84b' },
+      { id: 4, name: 'تطبيق الخرائط', cat: 'تنقل', size: '610 م.ب', usage: 'أسبوعيًا', status: 'نشط', color: '#42e08d' },
+      { id: 5, name: 'محرر الفيديو', cat: 'إنتاجية', size: '1.8 غ.ب', usage: 'شهريًا', status: 'متوقف', color: '#ff6b7a' },
+      { id: 6, name: 'تطبيق الموسيقى', cat: 'ترفيه', size: '920 م.ب', usage: 'يوميًا', status: 'نشط', color: '#c084fc' }
+    ];
+    const INITIAL_HISTORY = [
+      { id: 1, title: 'فحص شامل للجهاز', time: 'اليوم • 09:24 صباحًا', score: '92 / 100', type: 'فحص' },
+      { id: 2, title: 'تحسين البطارية', time: 'أمس • 08:10 مساءً', score: 'تم توفير 18%', type: 'بطارية' },
+      { id: 3, title: 'تنظيف ذاكرة التخزين', time: 'أمس • 11:32 صباحًا', score: 'تحرير 1.4 غ.ب', type: 'تخزين' },
+      { id: 4, title: 'فحص الأمان والخصوصية', time: 'قبل يومين', score: 'لا توجد تهديدات', type: 'أمان' }
+    ];
+    const TIPS = [
+      { t: 'اشحن بذكاء', d: 'حافظ على شحن البطارية بين 20% و 80% لإطالة عمرها الافتراضي، وتجنّب الشحن الكامل المتكرر طوال الليل.', tag: 'البطارية', icon: '🔋' },
+      { t: 'نظّف ذاكرة التخزين أسبوعيًا', d: 'احذف ملفات التخزين المؤقت والصور المكررة، وراجع التطبيقات التي لا تستخدمها منذ أكثر من شهر.', tag: 'التخزين', icon: '🧹' },
+      { t: 'حدّث جهازك أولًا بأول', d: 'التحديثات لا تجلب مزايا جديدة فقط، بل تُغلق ثغرات أمنية وتحسّن استقرار النظام وسرعته.', tag: 'الأمان', icon: '🛡️' },
+      { t: 'أعد تشغيل جهازك', d: 'إعادة تشغيل واحدة أسبوعيًا تُفرغ الذاكرة المؤقتة وتُصلح الكثير من مشكلات البطء والتعليق.', tag: 'الأداء', icon: '⚡' },
+      { t: 'راجع أذونات التطبيقات', d: 'لا تمنح أي تطبيق صلاحية لا يحتاجها. الكاميرا والموقع وجهات الاتصال تستحق مراجعة دورية.', tag: 'الخصوصية', icon: '👁️' },
+      { t: 'احمِ جهازك من الحرارة', d: 'تجنّب استخدام الجهاز أثناء الشحن أو تحت أشعة الشمس المباشرة، وأزل الغطاء عند ارتفاع الحرارة.', tag: 'العناية', icon: '🌡️' }
+    ];
+    const SCAN_STEPS = [
+      { name: 'فحص البطارية', desc: 'قياس صحة الخلايا ودورة الشحن', status: 'ممتاز' },
+      { name: 'فحص التخزين', desc: 'العثور على الملفات المؤقتة والمكررة', status: 'بحاجة إلى تنظيف' },
+      { name: 'فحص الفيروسات', desc: 'مقارنة التطبيقات بقاعدة التهديدات', status: 'آمن' },
+      { name: 'فحص التطبيقات', desc: 'مراجعة استهلاك التطبيقات للطاقة', status: 'تطبيقان يستهلكان طاقة' },
+      { name: 'فحص الشبكة', desc: 'اختبار سرعة الاتصال واستقراره', status: 'ممتاز' }
+    ];
+    const DEFAULT_DEVICE = {
+      name: 'نوفا فون برو', model: 'Nova X5 Pro', os: 'نوفا OS 15.2',
+      cpu: 'Nova Fusion X3', ram: '12 غ.ب', storage: '256 غ.ب',
+      owner: 'مالك الجهاز', serial: 'NVX5-2026-8841'
+    };
+
+    // إزالة localStorage للتوافق التام مع الاستضافات
+    // واستخدام حالة داخلية فقط
+    const uid = () => (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : 'id-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+    const cn = (...xs) => xs.filter(Boolean).join(' ').trim();
+
+    function Toggle({ on, onChange, label }) {
+      return h('button', { type: 'button', role: 'switch', 'aria-checked': on, 'aria-label': label, onClick: () => onChange(!on), className: cn('relative h-7 w-12 shrink-0 rounded-full transition', on ? 'bg-[#42e08d]' : 'bg-white/15') },
+        h('span', { className: cn('absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-all', on ? 'left-1' : 'left-6') })
+      );
+    }
+
+    function StatCard({ icon, label, value, sub, color }) {
+      return h('div', { className: 'glass rounded-3xl p-4 rise' },
+        h('div', { className: 'flex items-center gap-3' },
+          h('span', { className: 'grid h-11 w-11 place-items-center rounded-2xl', style: { background: color + '22', color } }, icon),
+          h('div', null, h('p', { className: 'text-xs text-[#a9b4d3]' }, label), h('p', { className: 'text-xl font-black leading-tight' }, value))
+        ),
+        h('p', { className: 'mt-3 text-xs leading-5 text-[#a9b4d3]' }, sub)
+      );
+    }
+
+    function ProgressRing({ value, label, gradientId }) {
+      const r = 68, c = 2 * Math.PI * r;
+      return h('div', { className: 'relative mx-auto mt-4 h-44 w-44', role: 'img', 'aria-label': label + ': ' + Math.round(value) + '%' },
+        h('svg', { viewBox: '0 0 160 160', className: 'h-full w-full -rotate-90', 'aria-hidden': 'true' },
+          h('circle', { cx: 80, cy: 80, r, fill: 'none', stroke: 'rgba(255,255,255,.1)', strokeWidth: 13 }),
+          h('circle', { cx: 80, cy: 80, r, fill: 'none', stroke: 'url(#' + gradientId + ')', strokeWidth: 13, strokeLinecap: 'round', strokeDasharray: c, strokeDashoffset: c - c * value / 100 }),
+          h('defs', null, h('linearGradient', { id: gradientId, x1: '0', x2: '1' },
+            h('stop', { offset: '0%', stopColor: '#e8b84b' }),
+            h('stop', { offset: '100%', stopColor: '#38e6d6' })
+          ))
+        ),
+        h('div', { className: 'absolute inset-0 grid place-items-center text-center' },
+          h('div', null, h('p', { className: 'text-4xl font-black' }, Math.round(value) + '%'), h('p', { className: 'text-xs text-[#a9b4d3]' }, label))
+        )
+      );
+    }
+
+    function NovaCareApp() {
+      const [page, setPage] = useState('home');
+      const [menuOpen, setMenuOpen] = useState(false);
+      const [toasts, setToasts] = useState([]);
+      const [scanProgress, setScanProgress] = useState(0);
+      const [scanning, setScanning] = useState(false);
+      const [scanDone, setScanDone] = useState(false);
+      const [fixedItems, setFixedItems] = useState([]);
+      const [batteryLevel, setBatteryLevel] = useState(68);
+      const [powerSave, setPowerSave] = useState(true);
+      const [autoBrightness, setAutoBrightness] = useState(true);
+      const [darkMode, setDarkMode] = useState(true);
+      const [brightness, setBrightness] = useState(62);
+      const [selectedFiles, setSelectedFiles] = useState([1, 2, 3]);
+      const [cleaning, setCleaning] = useState(false);
+      const [cleanDone, setCleanDone] = useState(false);
+      const [cleanFreed, setCleanFreed] = useState(0);
+      const [boosted, setBoosted] = useState(false);
+      const [boosting, setBoosting] = useState(false);
+      const [ramUsage, setRamUsage] = useState(78);
+      const [appList, setAppList] = useState(APPS);
+      const [appQuery, setAppQuery] = useState('');
+      const [secScanning, setSecScanning] = useState(false);
+      const [secDone, setSecDone] = useState(false);
+      const [permissions, setPermissions] = useState({ camera: true, location: false, mic: true, contacts: false });
+      const [history, setHistory] = useState(INITIAL_HISTORY);
+      const [device, setDevice] = useState(DEFAULT_DEVICE);
+      const scanTimer = useRef(null);
+
+      useEffect(() => () => { if (scanTimer.current) window.clearInterval(scanTimer.current); }, []);
+
+      const pushToast = useCallback((title, desc, icon = '✦') => {
+        const id = uid();
+        setToasts(prev => [...prev, { id, title, desc, icon }]);
+        setTimeout(() => setToasts(prev => prev.filter(t => t.id !== id)), 4200);
+      }, []);
+
+      const goTo = useCallback((id) => { setPage(id); setMenuOpen(false); window.scrollTo({ top: 0 }); }, []);
+
+      const healthScore = useMemo(() => {
+        let score = 92;
+        if (scanDone) score = 92 - (5 - fixedItems.length);
+        if (fixedItems.length === 5) score = 92;
+        return Math.max(60, Math.min(100, score));
+      }, [scanDone, fixedItems.length]);
+
+      const currentStep = useMemo(() => Math.min(SCAN_STEPS.length - 1, Math.floor(scanProgress / 20)), [scanProgress]);
+
+      const startScan = () => {
+        if (scanning) return;
+        setScanning(true); setScanDone(false); setScanProgress(0); setFixedItems([]);
+        scanTimer.current = window.setInterval(() => {
+          setScanProgress(prev => {
+            const next = prev + 2;
+            if (next >= 100) {
+              if (scanTimer.current) window.clearInterval(scanTimer.current);
+              setScanning(false); setScanDone(true);
+              setHistory(h => [{ id: uid(), title: 'فحص شامل للجهاز', time: 'الآن', score: '92 / 100', type: 'فحص' }, ...h]);
+              pushToast('اكتمل الفحص الشامل', 'تم فحص 5 أقسام ووجدنا 3 عناصر تحتاج إلى انتباهك.', '🔍');
+              return 100;
+            }
+            return next;
+          });
+        }, 28);
+      };
+
+      const startClean = () => {
+        if (cleaning) return;
+        setCleanDone(false); setCleanFreed(0); setCleaning(true);
+        let v = 0;
+        const timer = window.setInterval(() => {
+          v += 0.07; setCleanFreed(Math.min(1.86, v));
+          if (v >= 1.86) {
+            window.clearInterval(timer); setCleaning(false); setCleanDone(true);
+            setHistory(h => [{ id: uid(), title: 'تنظيف ذاكرة التخزين', time: 'الآن', score: 'تحرير 1.86 غ.ب', type: 'تخزين' }, ...h]);
+            pushToast('تم تنظيف الجهاز بنجاح', 'تم تحرير 1.86 غ.ب من الملفات المؤقتة وغير الضرورية.', '✨');
+          }
+        }, 55);
+      };
+
+      const startBoost = () => {
+        if (boosting) return;
+        setBoosting(true); setBoosted(false);
+        setTimeout(() => {
+          setRamUsage(34); setBoosting(false); setBoosted(true);
+          setHistory(h => [{ id: uid(), title: 'تسريع ذاكرة الجهاز', time: 'الآن', score: 'تحرير 44% من RAM', type: 'أداء' }, ...h]);
+          pushToast('تم تسريع جهازك', 'أصبحت الذاكرة أخف، والتطبيقات ستفتح أسرع من قبل.', '⚡');
+        }, 1800);
+      };
+
+      const startSecurityScan = () => {
+        if (secScanning) return;
+        setSecScanning(true); setSecDone(false);
+        setTimeout(() => { setSecScanning(false); setSecDone(true); pushToast('جهازك محمي', 'لم يتم العثور على أي تهديدات أو تطبيقات مشبوهة.', '🛡️'); }, 2200);
+      };
+
+      const filteredApps = useMemo(() => appList.filter(a => a.name.includes(appQuery) || a.cat.includes(appQuery)), [appList, appQuery]);
+      const storageUsage = cleanDone ? 74 : 82;
+
+      const navItems = [
+        { id: 'home', label: 'الرئيسية', Icon: House }, { id: 'scan', label: 'الفحص الشامل', Icon: ScanLine },
+        { id: 'battery', label: 'طبيب البطارية', Icon: BatteryCharging }, { id: 'storage', label: 'منظّف التخزين', Icon: HardDrive },
+        { id: 'apps', label: 'مدير التطبيقات', Icon: Smartphone }, { id: 'security', label: 'الأمان والخصوصية', Icon: ShieldCheck },
+        { id: 'booster', label: 'مسرّع الأداء', Icon: Zap }, { id: 'device', label: 'معلومات الجهاز', Icon: Cpu },
+        { id: 'history', label: 'السجل والتقارير', Icon: HistoryIcon }, { id: 'tips', label: 'نصائح العناية', Icon: Lightbulb }
+      ];
+
+      const renderHome = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'hero', className: 'relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#182654] via-[#0d1739] to-black p-5 sm:p-7' }, [
+          h('div', { key: 'b1', className: 'absolute -left-10 -top-10 h-44 w-44 rounded-full bg-[#38e6d6]/25 blur-3xl' }),
+          h('div', { key: 'b2', className: 'absolute -bottom-16 right-10 h-44 w-44 rounded-full bg-[#e8b84b]/25 blur-3xl' }),
+          h('div', { key: 'grid', className: 'relative grid items-center gap-6 lg:grid-cols-[1.25fr_.75fr]' }, [
+            h('div', { key: 'left' }, [
+              h('div', { key: 'badge', className: 'inline-flex items-center gap-2 rounded-full border border-[#e8b84b]/40 bg-[#e8b84b]/10 px-3 py-1 text-xs font-bold text-[#f7dc8f]' }, [h(Sparkles, { key: 's', size: 14 }), ' رعاية ذكية • فحص لحظي']),
+              h('h1', { key: 'h', className: 'mt-4 text-3xl font-black leading-[1.15] sm:text-5xl' }, ['جهازك يستحق', h('br', { key: 'br' }), h('span', { key: 'g', className: 'gold-text' }, 'عناية تليق بفخامته.')]),
+              h('p', { key: 'p', className: 'mt-3 max-w-xl text-sm leading-7 text-[#c7cede] sm:text-base' }, 'نوفا كير يحلّل البطارية والأداء والأمان والتخزين في مكان واحد، ويمنحك خطوات واضحة للحفاظ على جهازك كأنه جديد.'),
+              h('div', { key: 'btns', className: 'mt-5 flex flex-wrap gap-3' }, [
+                h('button', { key: 'b1', onClick: () => goTo('scan'), className: 'gold-btn rounded-full px-5 py-3 text-sm font-black' }, 'ابدأ الفحص الشامل ←'),
+                h('button', { key: 'b2', onClick: () => goTo('booster'), className: 'rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-bold' }, 'تسريع فوري')
+              ]),
+              h('div', { key: 'stats', className: 'mt-6 flex gap-6 text-xs text-[#a9b4d3]' }, [
+                h('span', { key: 's1' }, [h('b', { key: 'b', className: 'block text-lg text-white' }, '+12 ألف'), ' عملية صيانة']),
+                h('span', { key: 's2' }, [h('b', { key: 'b', className: 'block text-lg text-white' }, '4.9 / 5'), ' تقييم المستخدمين']),
+                h('span', { key: 's3' }, [h('b', { key: 'b', className: 'block text-lg text-white' }, '24 / 7'), ' حماية نشطة'])
+              ])
+            ]),
+            h('div', { key: 'phone', className: 'relative mx-auto w-full max-w-[260px]' }, [
+              h('div', { key: 'frame', className: 'rounded-[2.6rem] border-[7px] border-[#202a4c] bg-[#071022] p-3 shadow-2xl', style: { animation: 'float 5s ease-in-out infinite' } },
+                h('div', { className: 'rounded-[2rem] bg-gradient-to-b from-[#152452] to-[#050a1e] p-4 text-center' }, [
+                  h('div', { key: 'notch', className: 'mx-auto h-3 w-20 rounded-full bg-black/70' }),
+                  h('div', { key: 'score', className: 'mt-5 text-4xl font-black text-[#38e6d6]' }, ['92', h('span', { key: 'p', className: 'text-base' }, '%')]),
+                  h('p', { key: 'lbl', className: 'text-xs text-[#a9b4d3]' }, 'صحة الجهاز'),
+                  h('div', { key: 'mini', className: 'mt-4 grid grid-cols-2 gap-2 text-[11px]' }, [
+                    h('div', { key: 'm1', className: 'rounded-xl bg-white/5 p-2' }, ['🔋 68%', h('br', { key: 'b' }), 'بطارية']),
+                    h('div', { key: 'm2', className: 'rounded-xl bg-white/5 p-2' }, ['⚡ 34°', h('br', { key: 'b' }), 'حرارة']),
+                    h('div', { key: 'm3', className: 'rounded-xl bg-white/5 p-2' }, ['💾 82%', h('br', { key: 'b' }), 'تخزين']),
+                    h('div', { key: 'm4', className: 'rounded-xl bg-white/5 p-2' }, ['🛡️ 100%', h('br', { key: 'b' }), 'أمان'])
+                  ]),
+                  h('button', { key: 'cta', onClick: () => goTo('scan'), className: 'mt-4 w-full rounded-full bg-[#e8b84b] py-2 text-xs font-black text-black' }, 'فحص الآن')
+                ])),
+              h('div', { key: 'tag1', className: 'absolute -right-2 top-5 rounded-2xl border border-white/10 bg-[#111a38] px-3 py-2 text-xs shadow-xl' }, '✓ لا توجد فيروسات'),
+              h('div', { key: 'tag2', className: 'absolute -left-3 bottom-8 rounded-2xl border border-white/10 bg-[#111a38] px-3 py-2 text-xs shadow-xl' }, '⚡ أداء محسّن')
+            ])
+          ])
+        ]),
+        h('div', { key: 'health', className: 'grid gap-4 lg:grid-cols-[.9fr_1.1fr]' }, [
+          h('div', { key: 'ring', className: 'glass rounded-[1.8rem] p-5' }, [
+            h('div', { key: 'head', className: 'flex items-center justify-between' }, [
+              h('div', { key: 'l' }, [h('p', { key: 'a', className: 'text-sm text-[#a9b4d3]' }, 'نتيجة صحة الجهاز'), h('p', { key: 'b', className: 'mt-1 text-2xl font-black' }, ['ممتازة ', h('span', { key: 's', className: 'text-sm font-bold text-[#42e08d]' }, '• مستقرة')])]),
+              h('span', { key: 'tag', className: 'rounded-full bg-[#42e08d]/15 px-3 py-1 text-xs font-bold text-[#42e08d]' }, 'آخر فحص اليوم')
+            ]),
+            h(ProgressRing, { key: 'pr', value: healthScore, label: 'درجة الصحة', gradientId: 'healthGradient' }),
+            h('div', { key: 'mini', className: 'mt-3 grid grid-cols-3 gap-2 text-center text-xs' }, [
+              h('div', { key: 'a', className: 'rounded-2xl bg-white/5 p-3' }, [h('b', { key: 'b', className: 'block text-base' }, '98%'), 'الأمان']),
+              h('div', { key: 'b', className: 'rounded-2xl bg-white/5 p-3' }, [h('b', { key: 'b', className: 'block text-base' }, '88%'), 'البطارية']),
+              h('div', { key: 'c', className: 'rounded-2xl bg-white/5 p-3' }, [h('b', { key: 'b', className: 'block text-base' }, '91%'), 'الأداء'])
+            ])
+          ]),
+          h('div', { key: 'stats' }, [
+            h('div', { key: 'grid', className: 'grid grid-cols-2 gap-3 sm:gap-4' }, [
+              h(StatCard, { key: 'a', icon: h(BatteryCharging, {}), label: 'صحة البطارية', value: '88%', sub: 'دورة الشحن: 312 • أداء مستقر', color: '#42e08d' }),
+              h(StatCard, { key: 'b', icon: h(HardDrive, {}), label: 'التخزين', value: '211 / 256 غ.ب', sub: 'تبقّى 45 غ.ب حرة', color: '#e8b84b' }),
+              h(StatCard, { key: 'c', icon: h(MemoryStick, {}), label: 'الذاكرة RAM', value: ramUsage + '% مستخدمة', sub: boosted ? 'تم تحرير 44% من الذاكرة' : '12 تطبيقًا يعمل في الخلفية', color: '#4f7bff' }),
+              h(StatCard, { key: 'd', icon: h(Thermometer, {}), label: 'درجة الحرارة', value: '34° مئوية', sub: 'ضمن النطاق الآمن تمامًا', color: '#38e6d6' })
+            ]),
+            h('div', { key: 'quick', className: 'mt-4 grid grid-cols-2 gap-3' }, [
+              h('button', { key: 'scan', onClick: () => goTo('scan'), className: 'glass rounded-2xl p-4 text-right hover:border-[#e8b84b]/50' }, [h(ScanLine, { key: 'i', className: 'text-[#e8b84b]' }), h('b', { key: 'b', className: 'mt-2 block' }, 'فحص شامل'), h('span', { key: 's', className: 'text-xs text-[#a9b4d3]' }, '5 أقسام في دقيقة واحدة')]),
+              h('button', { key: 'sec', onClick: () => goTo('security'), className: 'glass rounded-2xl p-4 text-right hover:border-[#38e6d6]/50' }, [h(ShieldCheck, { key: 'i', className: 'text-[#38e6d6]' }), h('b', { key: 'b', className: 'mt-2 block' }, 'فحص الأمان'), h('span', { key: 's', className: 'text-xs text-[#a9b4d3]' }, 'حماية وخصوصية متكاملة')])
+            ])
+          ])
+        ]),
+        h('div', { key: 'tools' }, [
+          h('div', { key: 'head', className: 'mb-3 flex items-center justify-between' }, [h('h2', { key: 't', className: 'text-xl font-black' }, 'كل أدوات الصيانة'), h('span', { key: 's', className: 'text-xs text-[#a9b4d3]' }, 'اضغط على أي أداة للبدء')]),
+          h('div', { key: 'grid', className: 'grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5' }, [
+            { id: 'battery', t: 'طبيب البطارية', s: 'عمر أطول وشحن أذكى', e: '🔋', c: '#42e08d' },
+            { id: 'storage', t: 'منظّف التخزين', s: 'حرّر 1.86 غ.ب الآن', e: '🧹', c: '#e8b84b' },
+            { id: 'apps', t: 'مدير التطبيقات', s: appList.length + ' تطبيقات مُدارة', e: '📱', c: '#4f7bff' },
+            { id: 'booster', t: 'مسرّع الأداء', s: 'أطلق العنان للسرعة', e: '⚡', c: '#38e6d6' },
+            { id: 'device', t: 'معلومات الجهاز', s: 'مواصفات كاملة', e: '💻', c: '#c084fc' }
+          ].map(item => h('button', { key: item.id, onClick: () => goTo(item.id), className: 'glass rounded-3xl p-4 text-right transition hover:-translate-y-1' }, [
+            h('span', { key: 'e', className: 'text-3xl' }, item.e),
+            h('b', { key: 't', className: 'mt-3 block' }, item.t),
+            h('span', { key: 's', className: 'text-xs leading-5 text-[#a9b4d3]' }, item.s),
+            h('span', { key: 'c', className: 'mt-3 block text-xs font-bold', style: { color: item.c } }, 'افتح الأداة ←')
+          ])))
+        ]),
+        h('div', { key: 'tip', className: 'glass rounded-[1.8rem] p-5' },
+          h('div', { className: 'flex items-center gap-3' }, [
+            h('span', { key: 'i', className: 'grid h-11 w-11 place-items-center rounded-2xl bg-[#e8b84b]/15 text-2xl' }, '💡'),
+            h('div', { key: 'txt' }, [h('h3', { key: 'h', className: 'font-black' }, 'نصيحة اليوم'), h('p', { key: 'p', className: 'text-sm text-[#a9b4d3]' }, 'حافظ على شحن البطارية بين 20% و 80% لإطالة عمرها.')]),
+            h('button', { key: 'b', onClick: () => goTo('tips'), className: 'mr-auto shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-bold' }, 'كل النصائح')
+          ])
+        )
+      ]);
+
+      const renderScan = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head', className: 'flex flex-wrap items-end justify-between gap-3' }, [
+          h('div', { key: 't' }, [h('p', { key: 'a', className: 'text-sm text-[#e8b84b]' }, 'الفحص الذكي'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'فحص شامل للجهاز'), h('p', { key: 'c', className: 'mt-1 text-sm text-[#a9b4d3]' }, 'نحلّل البطارية والتخزين والأمان والتطبيقات والشبكة.')]),
+          h('button', { key: 'btn', onClick: startScan, disabled: scanning, className: 'gold-btn flex items-center gap-2 rounded-full px-6 py-3 text-sm font-black disabled:opacity-60' }, [h(Play, { key: 'i', size: 17 }), scanning ? 'جارٍ الفحص…' : scanDone ? 'إعادة الفحص' : 'ابدأ الفحص الشامل'])
+        ]),
+        h('div', { key: 'progress', className: 'glass rounded-[1.8rem] p-5 sm:p-6' }, [
+          h('div', { key: 'row', className: 'flex items-center justify-between' }, [h('b', { key: 'l' }, 'تقدم الفحص'), h('b', { key: 'r', className: 'text-2xl text-[#e8b84b]' }, scanProgress + '%')]),
+          h('div', { key: 'bar', className: 'mt-3 h-3 overflow-hidden rounded-full bg-white/10', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': scanProgress, 'aria-label': 'تقدم الفحص' },
+            h('div', { className: cn('h-full rounded-full bg-gradient-to-l from-[#e8b84b] to-[#38e6d6] transition-all duration-300', scanning && 'scan-line'), style: { width: scanProgress + '%' } })),
+          h('p', { key: 'msg', className: 'mt-3 text-sm text-[#a9b4d3]' }, scanning ? 'جارٍ الآن: ' + SCAN_STEPS[currentStep].name + '…' : scanDone ? 'اكتمل الفحص. راجع النتائج بالأسفل.' : 'اضغط على زر الفحص للبدء.')
+        ]),
+        h('div', { key: 'steps', className: 'grid gap-3 md:grid-cols-2' }, SCAN_STEPS.map((step, i) => {
+          const isCurrent = scanning && i === currentStep;
+          const isDone = scanDone || (scanning && i < currentStep);
+          return h('div', { key: step.name, className: cn('glass rounded-3xl p-4', isCurrent && 'border-[#38e6d6]/50') },
+            h('div', { className: 'flex gap-3' }, [
+              h('span', { key: 'i', className: cn('grid h-11 w-11 shrink-0 place-items-center rounded-2xl', isDone ? 'bg-[#42e08d]/15 text-[#42e08d]' : 'bg-white/5 text-[#a9b4d3]') }, isDone ? h(CircleCheck, {}) : isCurrent ? h(RefreshCw, { className: 'animate-spin' }) : h(Activity, {})),
+              h('div', { key: 'b', className: 'min-w-0 flex-1' }, [
+                h('div', { key: 'row', className: 'flex items-center justify-between gap-2' }, [h('b', { key: 't' }, step.name), h('span', { key: 's', className: 'text-xs text-[#a9b4d3]' }, isDone ? 'مكتمل' : isCurrent ? 'جارٍ…' : 'بانتظار')]),
+                h('p', { key: 'd', className: 'mt-1 text-xs leading-5 text-[#a9b4d3]' }, step.desc),
+                scanDone && h('div', { key: 'fix', className: 'mt-3 flex items-center justify-between gap-2 rounded-2xl bg-white/5 px-3 py-2 text-xs' }, [
+                  h('span', { key: 'st' }, step.status),
+                  h('button', { key: 'b', disabled: fixedItems.includes(i), onClick: () => { setFixedItems(prev => [...prev, i]); pushToast('تم الإصلاح', 'تم تطبيق الإصلاح المقترح بنجاح.', '✓'); }, className: 'rounded-full bg-[#e8b84b] px-3 py-1 font-black text-black disabled:bg-[#42e08d] disabled:text-white' }, fixedItems.includes(i) ? 'تم الإصلاح ✓' : 'إصلاح')
+                ])
+              ])
+            ])
+          );
+        })),
+        scanDone && h('div', { key: 'result', className: 'rounded-3xl border border-[#42e08d]/30 bg-[#42e08d]/10 p-5 text-center', role: 'status', 'aria-live': 'polite' }, [
+          h('p', { key: 'h', className: 'text-lg font-black' }, 'نتيجة رائعة! جهازك في حالة ' + (healthScore >= 90 ? 'ممتازة' : 'جيدة') + ' بنسبة ' + healthScore + '%'),
+          h('p', { key: 'p', className: 'mt-1 text-sm text-[#c8d7cb]' }, 'تم إصلاح ' + fixedItems.length + ' من أصل 5 عناصر. يمكنك متابعة بقية التحسينات من أدوات البطارية والتخزين.')
+        ])
+      ]);
+
+      const renderBattery = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head' }, [h('p', { key: 'a', className: 'text-sm text-[#42e08d]' }, 'الطاقة والعناية'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'طبيب البطارية')]),
+        h('div', { key: 'grid', className: 'grid gap-4 lg:grid-cols-[1fr_1.2fr]' }, [
+          h('div', { key: 'ring', className: 'glass rounded-[1.8rem] p-6 text-center' }, [
+            h('div', { key: 'r', className: 'relative mx-auto h-36 w-36', role: 'img', 'aria-label': 'مستوى الشحن ' + batteryLevel + '%' }, [
+              h('svg', { key: 's', viewBox: '0 0 120 120', className: 'h-full w-full -rotate-90', 'aria-hidden': 'true' },
+                h('circle', { cx: 60, cy: 60, r: 50, fill: 'none', stroke: 'rgba(255,255,255,.1)', strokeWidth: 12 }),
+                h('circle', { cx: 60, cy: 60, r: 50, fill: 'none', stroke: '#42e08d', strokeWidth: 12, strokeLinecap: 'round', strokeDasharray: 314, strokeDashoffset: 314 - 314 * batteryLevel / 100 })),
+              h('div', { key: 'l', className: 'absolute inset-0 grid place-items-center' }, h('div', null, h('p', { className: 'text-4xl font-black' }, batteryLevel + '%'), h('p', { className: 'text-xs text-[#a9b4d3]' }, 'مستوى الشحن')))
+            ]),
+            h('input', { key: 'rng', 'aria-label': 'مستوى شحن البطارية', 'aria-valuetext': batteryLevel + '%', type: 'range', min: 0, max: 100, value: batteryLevel, onChange: e => setBatteryLevel(+e.target.value), className: 'mt-5 w-full' }),
+            h('div', { key: 'labels', className: 'mt-3 flex justify-between text-xs text-[#a9b4d3]' }, [h('span', { key: 'a' }, '0%'), h('span', { key: 'b' }, 'الاستهلاك المتوقع: ' + (batteryLevel > 50 ? '9 ساعات و 20 دقيقة' : '4 ساعات و 10 دقائق')), h('span', { key: 'c' }, '100%')]),
+            h('div', { key: 'mini', className: 'mt-5 grid grid-cols-2 gap-3 text-right' }, [
+              h('div', { key: 'a', className: 'rounded-2xl bg-white/5 p-3' }, [h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'صحة البطارية'), h('b', { key: 'v', className: 'block text-lg' }, '88%')]),
+              h('div', { key: 'b', className: 'rounded-2xl bg-white/5 p-3' }, [h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'دورة الشحن'), h('b', { key: 'v', className: 'block text-lg' }, '312 دورة')])
+            ])
+          ]),
+          h('div', { key: 'opts', className: 'space-y-4' }, [
+            h('div', { key: 'box', className: 'glass rounded-[1.8rem] p-5' }, [
+              h('h3', { key: 'h', className: 'font-black' }, 'تحسينات الطاقة'),
+              h('div', { key: 'list', className: 'mt-4 space-y-4' }, [
+                { l: 'وضع توفير الطاقة', d: 'يقلل استهلاك التطبيقات في الخلفية', v: powerSave, s: setPowerSave },
+                { l: 'السطوع التلقائي', d: 'يضبط الإضاءة حسب المكان', v: autoBrightness, s: setAutoBrightness },
+                { l: 'المظهر الداكن الموفر', d: 'يقلل استهلاك الشاشة', v: darkMode, s: setDarkMode }
+              ].map(item => h('div', { key: item.l, className: 'flex items-center gap-3' }, [
+                h('div', { key: 'l', className: 'min-w-0 flex-1' }, [h('b', { key: 't', className: 'text-sm' }, item.l), h('p', { key: 'd', className: 'text-xs text-[#a9b4d3]' }, item.d)]),
+                h(Toggle, { key: 't', label: item.l, on: item.v, onChange: (v) => { item.s(v); pushToast(item.l, v ? 'تم التفعيل' : 'تم الإيقاف', v ? '✓' : '○'); } })
+              ]))),
+              h('div', { key: 'bri', className: 'mt-5' }, [
+                h('div', { key: 'row', className: 'flex justify-between text-sm' }, [h('b', { key: 'l' }, 'سطوع الشاشة'), h('span', { key: 'v' }, brightness + '%')]),
+                h('input', { key: 'rng', 'aria-label': 'سطوع الشاشة', 'aria-valuetext': brightness + '%', type: 'range', value: brightness, onChange: e => setBrightness(+e.target.value), className: 'mt-2 w-full' })
+              ])
+            ]),
+            h('div', { key: 'quick', className: 'grid gap-3 sm:grid-cols-3' }, [
+              { t: 'تفعيل التوفير', d: 'يضيف حتى 3 ساعات', e: '🌙' },
+              { t: 'إيقاف الخلفية', d: 'يوفر 12% طاقة', e: '🧊' },
+              { t: 'معايرة البطارية', d: 'قراءة أدق للشحن', e: '🎯' }
+            ].map(item => h('button', { key: item.t, onClick: () => pushToast(item.t, 'تم تطبيق التحسين بنجاح.', '⚡'), className: 'glass rounded-3xl p-4 text-right' }, [
+              h('span', { key: 'e', className: 'text-2xl' }, item.e),
+              h('b', { key: 't', className: 'mt-2 block text-sm' }, item.t),
+              h('span', { key: 'd', className: 'text-xs text-[#a9b4d3]' }, item.d)
+            ])))
+          ])
+        ])
+      ]);
+
+      const renderStorage = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head', className: 'flex flex-wrap items-end justify-between gap-3' }, [
+          h('div', { key: 't' }, [h('p', { key: 'a', className: 'text-sm text-[#e8b84b]' }, 'مساحة أكثر، جهاز أخف'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'منظّف التخزين')]),
+          h('button', { key: 'btn', onClick: startClean, disabled: cleaning, className: 'cyan-btn rounded-full px-6 py-3 text-sm font-black disabled:opacity-60' }, cleaning ? 'جارٍ التنظيف…' : cleanDone ? 'تم التنظيف ✓' : 'تنظيف الآن')
+        ]),
+        h('div', { key: 'usage', className: 'glass rounded-[1.8rem] p-5' }, [
+          h('div', { key: 'row', className: 'flex justify-between' }, [h('b', { key: 'l' }, 'إجمالي الاستخدام'), h('b', { key: 'r' }, storageUsage + '% • 211 غ.ب')]),
+          h('div', { key: 'bar', className: 'mt-4 flex h-5 overflow-hidden rounded-full' }, [
+            { v: 38, c: '#4f7bff', l: 'التطبيقات' }, { v: 22, c: '#e8b84b', l: 'الصور' }, { v: 14, c: '#38e6d6', l: 'الفيديو' }, { v: 8, c: '#ff6b7a', l: 'الذاكرة المؤقتة' }
+          ].map(x => h('div', { key: x.l, style: { width: x.v + '%', background: x.c }, title: x.l }))),
+          h('div', { key: 'legend', className: 'mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4' }, [
+            { l: 'التطبيقات', v: '97 غ.ب', c: '#4f7bff' }, { l: 'الصور', v: '56 غ.ب', c: '#e8b84b' }, { l: 'الفيديو', v: '36 غ.ب', c: '#38e6d6' }, { l: 'الذاكرة المؤقتة', v: '20 غ.ب', c: '#ff6b7a' }
+          ].map(x => h('div', { key: x.l, className: 'rounded-2xl bg-white/5 p-3' }, [
+            h('span', { key: 'd', className: 'inline-block h-2 w-2 rounded-full', style: { background: x.c } }), ' ',
+            h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, x.l),
+            h('b', { key: 'v', className: 'block text-lg' }, x.v)
+          ]))),
+          cleaning && h('div', { key: 'prog', className: 'mt-5' }, [
+            h('div', { key: 'row', className: 'flex justify-between text-sm' }, [h('span', { key: 'l' }, 'جارٍ تحرير المساحة…'), h('b', { key: 'v', className: 'text-[#38e6d6]' }, cleanFreed.toFixed(2) + ' غ.ب')]),
+            h('div', { key: 'bar', className: 'mt-2 h-2 overflow-hidden rounded-full bg-white/10', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 1.86, 'aria-valuenow': cleanFreed, 'aria-label': 'تقدم التنظيف' },
+              h('div', { className: 'h-full bg-[#38e6d6] transition-all', style: { width: (cleanFreed / 1.86 * 100) + '%' } }))
+          ]),
+          cleanDone && h('p', { key: 'ok', className: 'mt-4 rounded-2xl bg-[#42e08d]/10 p-3 text-sm font-bold text-[#42e08d]' }, 'تم تحرير 1.86 غ.ب بنجاح. أصبح جهازك أخف وأسرع.')
+        ]),
+        h('div', { key: 'files', className: 'glass rounded-[1.8rem] p-5' }, [
+          h('div', { key: 'head', className: 'flex items-center justify-between' }, [h('h3', { key: 't', className: 'font-black' }, 'ملفات غير ضرورية'), h('span', { key: 's', className: 'text-xs text-[#a9b4d3]' }, 'حدد ما تريد حذفه')]),
+          h('div', { key: 'list', className: 'mt-4 space-y-3' }, [
+            { id: 1, n: 'ملفات التخزين المؤقت', s: '1.24 غ.ب', d: 'ملفات مؤقتة آمنة الحذف' },
+            { id: 2, n: 'صور مكررة', s: '420 م.ب', d: '18 صورة مكررة' },
+            { id: 3, n: 'ملفات التنزيل القديمة', s: '180 م.ب', d: 'ملفات لم تُفتح منذ 90 يومًا' },
+            { id: 4, n: 'سجلات النظام', s: '24 م.ب', d: 'سجلات تشخيص قديمة' }
+          ].map(file => h('label', { key: file.id, className: 'flex cursor-pointer items-center gap-3 rounded-2xl bg-white/5 p-3' }, [
+            h('input', { key: 'c', type: 'checkbox', checked: selectedFiles.includes(file.id), onChange: () => setSelectedFiles(prev => prev.includes(file.id) ? prev.filter(x => x !== file.id) : [...prev, file.id]), className: 'h-5 w-5 accent-[#e8b84b]' }),
+            h('span', { key: 'i', className: 'grid h-10 w-10 place-items-center rounded-xl bg-[#ff6b7a]/15 text-[#ff6b7a]' }, h(Trash2, { size: 18 })),
+            h('span', { key: 'b', className: 'min-w-0 flex-1' }, [h('b', { key: 'n', className: 'block text-sm' }, file.n), h('span', { key: 'd', className: 'text-xs text-[#a9b4d3]' }, file.d)]),
+            h('b', { key: 's', className: 'text-sm' }, file.s)
+          ]))),
+          h('button', { key: 'del', onClick: () => pushToast('تم حذف الملفات المحددة', 'تم حذف ' + selectedFiles.length + ' عناصر بأمان.', '🗑️'), className: 'mt-4 w-full rounded-full border border-[#ff6b7a]/40 bg-[#ff6b7a]/10 py-3 text-sm font-black text-[#ff8f99]' }, 'حذف الملفات المحددة (' + selectedFiles.length + ')')
+        ])
+      ]);
+
+      const renderApps = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head' }, [h('p', { key: 'a', className: 'text-sm text-[#4f7bff]' }, 'تحكم كامل بتطبيقاتك'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'مدير التطبيقات')]),
+        h('div', { key: 'search', className: 'relative' }, [
+          h(Search, { key: 'i', className: 'absolute right-4 top-1/2 -translate-y-1/2 text-[#a9b4d3]', size: 18 }),
+          h('input', { key: 'in', value: appQuery, onChange: e => setAppQuery(e.target.value), placeholder: 'ابحث باسم التطبيق أو الفئة…', 'aria-label': 'البحث في التطبيقات', className: 'w-full rounded-full border border-white/10 bg-[#111a38] py-3 pr-11 pl-4 text-sm' })
+        ]),
+        h('div', { key: 'list', className: 'grid gap-3 md:grid-cols-2' }, filteredApps.map(app => h('div', { key: app.id, className: 'glass rounded-3xl p-4' }, [
+          h('div', { key: 'head', className: 'flex items-center gap-3' }, [
+            h('span', { key: 'ic', className: 'grid h-12 w-12 place-items-center rounded-2xl text-xl font-black', style: { background: app.color + '22', color: app.color } }, app.name[0]),
+            h('div', { key: 'b', className: 'min-w-0 flex-1' }, [h('b', { key: 'n', className: 'block truncate' }, app.name), h('span', { key: 's', className: 'text-xs text-[#a9b4d3]' }, app.cat + ' • ' + app.size + ' • ' + app.usage)]),
+            h('span', { key: 'st', className: cn('rounded-full px-2 py-1 text-[11px] font-bold', app.status === 'نشط' ? 'bg-[#42e08d]/15 text-[#42e08d]' : 'bg-white/10 text-[#a9b4d3]') }, app.status)
+          ]),
+          h('div', { key: 'btns', className: 'mt-4 grid grid-cols-2 gap-2' }, [
+            h('button', { key: 'toggle', onClick: () => { const wasActive = app.status === 'نشط'; setAppList(prev => prev.map(a => a.id === app.id ? { ...a, status: wasActive ? 'متوقف' : 'نشط' } : a)); pushToast(app.name, wasActive ? 'تم إيقاف التطبيق مؤقتًا.' : 'تم تفعيل التطبيق من جديد.', '📱'); }, className: 'rounded-full border border-white/15 py-2 text-xs font-bold' }, app.status === 'نشط' ? 'إيقاف مؤقت' : 'تفعيل'),
+            h('button', { key: 'del', onClick: () => { setAppList(prev => prev.filter(a => a.id !== app.id)); pushToast('تم إلغاء تثبيت التطبيق', 'تمت إزالة ' + app.name + ' وتحرير ' + app.size + ' من المساحة.', '🗑️'); }, className: 'rounded-full bg-[#ff6b7a]/15 py-2 text-xs font-bold text-[#ff8f99]' }, 'إلغاء التثبيت')
+          ])
+        ]))),
+        filteredApps.length === 0 && h('p', { key: 'empty', className: 'rounded-3xl bg-white/5 p-6 text-center text-sm text-[#a9b4d3]' }, 'لا توجد نتائج مطابقة لبحثك.')
+      ]);
+
+      const renderSecurity = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head' }, [h('p', { key: 'a', className: 'text-sm text-[#38e6d6]' }, 'درعك الرقمي'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'الأمان والخصوصية')]),
+        h('div', { key: 'grid', className: 'grid gap-4 lg:grid-cols-2' }, [
+          h('div', { key: 'scan', className: 'glass rounded-[1.8rem] p-6 text-center' }, [
+            h('span', { key: 'ic', className: 'mx-auto grid h-20 w-20 place-items-center rounded-full bg-[#38e6d6]/12 text-[#38e6d6]' }, h(ShieldCheck, { size: 40 })),
+            h('h3', { key: 'h', className: 'mt-4 text-xl font-black' }, secDone ? 'جهازك آمن بالكامل' : 'فحص الحماية من الفيروسات'),
+            h('p', { key: 'd', className: 'mt-1 text-sm leading-6 text-[#a9b4d3]' }, 'نفحص التطبيقات والملفات والروابط بحثًا عن أي نشاط مشبوه.'),
+            h('button', { key: 'b', onClick: startSecurityScan, disabled: secScanning, className: 'cyan-btn mt-5 w-full rounded-full py-3 text-sm font-black disabled:opacity-60' }, secScanning ? 'جارٍ الفحص الأمني…' : 'فحص الأمان الآن'),
+            secDone && h('p', { key: 'ok', className: 'mt-4 rounded-2xl bg-[#42e08d]/10 p-3 text-sm font-bold text-[#42e08d]' }, '✓ تم فحص 248 عنصرًا — لا توجد تهديدات')
+          ]),
+          h('div', { key: 'perms', className: 'glass rounded-[1.8rem] p-5' }, [
+            h('h3', { key: 'h', className: 'font-black' }, 'أذونات التطبيقات'),
+            h('p', { key: 'd', className: 'mt-1 text-xs text-[#a9b4d3]' }, 'تحكم في البيانات التي تصل إليها التطبيقات.'),
+            h('div', { key: 'list', className: 'mt-4 space-y-4' }, [
+              { k: 'camera', l: 'الكاميرا', d: '3 تطبيقات لديها صلاحية' },
+              { k: 'location', l: 'الموقع', d: 'تطبيق واحد لديه صلاحية' },
+              { k: 'mic', l: 'الميكروفون', d: 'تطبيقان لديهما صلاحية' },
+              { k: 'contacts', l: 'جهات الاتصال', d: 'لا توجد صلاحيات نشطة' }
+            ].map(item => h('div', { key: item.k, className: 'flex items-center gap-3' }, [
+              h('div', { key: 'l', className: 'flex-1' }, [h('b', { key: 't', className: 'text-sm' }, item.l), h('p', { key: 'd', className: 'text-xs text-[#a9b4d3]' }, item.d)]),
+              h(Toggle, { key: 't', label: item.l, on: permissions[item.k], onChange: (v) => { setPermissions(prev => ({ ...prev, [item.k]: v })); pushToast(item.l, v ? 'تم منح الصلاحية' : 'تم سحب الصلاحية', '🔐'); } })
+            ]))),
+            h('button', { key: 'report', onClick: () => pushToast('تقرير الخصوصية جاهز', 'تم إنشاء ملخص لأذوناتك وإعدادات الخصوصية.', '📄'), className: 'mt-5 w-full rounded-full border border-white/15 py-3 text-sm font-bold' }, 'عرض تقرير الخصوصية')
+          ])
+        ]),
+        h('div', { key: 'quick', className: 'grid gap-3 sm:grid-cols-3' }, [
+          { t: 'قفل التطبيقات', d: 'حماية ببصمة الإصبع', e: '🔒' },
+          { t: 'فحص الشبكة', d: 'تنبيه للشبكات غير الآمنة', e: '📶' },
+          { t: 'التصفح الآمن', d: 'حظر الروابط الضارة', e: '🌐' }
+        ].map(item => h('button', { key: item.t, onClick: () => pushToast(item.t, 'تم تفعيل الحماية الإضافية.', '🛡️'), className: 'glass rounded-3xl p-4 text-right' }, [
+          h('span', { key: 'e', className: 'text-2xl' }, item.e),
+          h('b', { key: 't', className: 'mt-2 block' }, item.t),
+          h('span', { key: 'd', className: 'text-xs text-[#a9b4d3]' }, item.d)
+        ])))
+      ]);
+
+      const renderBooster = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head' }, [h('p', { key: 'a', className: 'text-sm text-[#38e6d6]' }, 'سرعة بلا حدود'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'مسرّع الأداء')]),
+        h('div', { key: 'card', className: 'glass overflow-hidden rounded-[1.8rem] p-6 text-center' }, [
+          h('p', { key: 'l', className: 'text-sm text-[#a9b4d3]' }, 'استخدام الذاكرة الحالي'),
+          h('p', { key: 'v', className: 'mt-2 text-5xl font-black' }, ramUsage + '%'),
+          h('div', { key: 'bar', className: 'mx-auto mt-5 h-4 max-w-xl overflow-hidden rounded-full bg-white/10', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': ramUsage, 'aria-label': 'استخدام الذاكرة' },
+            h('div', { className: cn('h-full rounded-full transition-all duration-700', ramUsage > 60 ? 'bg-gradient-to-l from-[#ff6b7a] to-[#ffb34d]' : 'bg-gradient-to-l from-[#42e08d] to-[#38e6d6]'), style: { width: ramUsage + '%' } })),
+          h('p', { key: 'd', className: 'mt-3 text-sm text-[#a9b4d3]' }, boosted ? 'ذاكرة خفيفة وجاهزة للأداء العالي.' : '12 تطبيقًا يعمل في الخلفية ويستهلك الذاكرة.'),
+          h('button', { key: 'btn', onClick: startBoost, disabled: boosting, className: 'gold-btn mx-auto mt-6 flex items-center gap-2 rounded-full px-8 py-4 font-black disabled:opacity-60', style: boosting ? { animation: 'pulseGlow 1s infinite' } : undefined }, [h(Zap, { key: 'i' }), ' ', boosting ? 'جارٍ التسريع…' : boosted ? 'تسريع مرة أخرى' : 'تسريع الآن']),
+          boosted && h('p', { key: 'ok', className: 'mt-4 font-bold text-[#42e08d]' }, '✓ تم تحرير 44% من الذاكرة وتحسين زمن الاستجابة')
+        ]),
+        h('div', { key: 'quick', className: 'grid gap-3 sm:grid-cols-3' }, [
+          { t: 'إيقاف تطبيقات الخلفية', d: '12 تطبيقًا', e: '⏸️' },
+          { t: 'تبريد المعالج', d: '34° مئوية', e: '❄️' },
+          { t: 'تحسين الرسوميات', d: 'وضع الأداء العالي', e: '🎮' }
+        ].map(item => h('button', { key: item.t, onClick: () => pushToast(item.t, 'تم تطبيق تحسين الأداء.', '⚡'), className: 'glass rounded-3xl p-4 text-right' }, [
+          h('span', { key: 'e', className: 'text-2xl' }, item.e),
+          h('b', { key: 't', className: 'mt-2 block' }, item.t),
+          h('span', { key: 'd', className: 'text-xs text-[#a9b4d3]' }, item.d)
+        ])))
+      ]);
+
+      const renderDevice = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head' }, [h('p', { key: 'a', className: 'text-sm text-[#c084fc]' }, 'هوية جهازك'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'معلومات الجهاز')]),
+        h('div', { key: 'grid', className: 'grid gap-4 lg:grid-cols-[.9fr_1.1fr]' }, [
+          h('div', { key: 'preview', className: 'glass rounded-[1.8rem] p-6 text-center' }, [
+            h('span', { key: 'em', className: 'text-7xl sm:text-6xl' }, '📱'),
+            h('h3', { key: 'n', className: 'mt-3 text-2xl font-black' }, device.name),
+            h('p', { key: 'm', className: 'text-sm text-[#a9b4d3]' }, device.model + ' • ' + device.os),
+            h('div', { key: 'grid', className: 'mt-5 grid grid-cols-2 gap-3 text-right' }, [
+              h('div', { key: 'cpu', className: 'rounded-2xl bg-white/5 p-3' }, [h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'المعالج'), h('b', { key: 'v', className: 'block text-sm' }, device.cpu)]),
+              h('div', { key: 'ram', className: 'rounded-2xl bg-white/5 p-3' }, [h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'الذاكرة'), h('b', { key: 'v', className: 'block text-sm' }, device.ram)]),
+              h('div', { key: 'st', className: 'rounded-2xl bg-white/5 p-3' }, [h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'التخزين'), h('b', { key: 'v', className: 'block text-sm' }, device.storage)]),
+              h('div', { key: 'sn', className: 'rounded-2xl bg-white/5 p-3' }, [h('span', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'الرقم التسلسلي'), h('b', { key: 'v', className: 'block text-sm' }, device.serial)])
+            ])
+          ]),
+          h('div', { key: 'edit', className: 'glass rounded-[1.8rem] p-5' }, [
+            h('h3', { key: 'h', className: 'font-black' }, 'تعديل بيانات الجهاز'),
+            h('p', { key: 'd', className: 'mt-1 text-xs text-[#a9b4d3]' }, 'تُحفظ البيانات محليًا في متصفحك فقط.'),
+            h('div', { key: 'grid', className: 'mt-4 grid gap-3 sm:grid-cols-2' }, [
+              ['name', 'model', 'os', 'cpu', 'owner'].map(key => h('label', { key, className: 'block text-sm' }, [
+                h('span', { key: 'l', className: 'mb-1 block text-xs text-[#a9b4d3]' }, key === 'name' ? 'اسم الجهاز' : key === 'model' ? 'الطراز' : key === 'os' ? 'نظام التشغيل' : key === 'cpu' ? 'المعالج' : 'اسم المالك'),
+                h('input', { key: 'in', value: device[key], onChange: e => setDevice({ ...device, [key]: e.target.value }), className: 'w-full rounded-xl border border-white/10 bg-[#0a1126] px-3 py-2.5' })
+              ])),
+              h('div', { key: 'btns', className: 'flex gap-2 sm:col-span-2' }, [
+                h('button', { key: 'save', onClick: () => pushToast('تم حفظ بيانات الجهاز', 'تم تحديث معلومات جهازك بنجاح.', '💾'), className: 'gold-btn flex-1 rounded-full py-3 text-sm font-black' }, 'حفظ التعديلات'),
+                h('button', { key: 'reset', onClick: () => { setDevice(DEFAULT_DEVICE); pushToast('تمت استعادة البيانات', 'تمت إعادة بيانات الجهاز الافتراضية.', '↺'); }, className: 'rounded-full border border-white/15 px-5 py-3 text-sm font-bold' }, 'استعادة')
+              ])
+            ])
+          ])
+        ])
+      ]);
+
+      const renderHistory = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head', className: 'flex flex-wrap items-end justify-between gap-3' }, [
+          h('div', { key: 't' }, [h('p', { key: 'a', className: 'text-sm text-[#e8b84b]' }, 'رحلة العناية بجهازك'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'السجل والتقارير')]),
+          h('div', { key: 'btns', className: 'flex gap-2' }, [
+            h('button', { key: 'copy', onClick: () => pushToast('تقرير الصيانة', 'تم تجهيز ملخص تقرير الصيانة للعرض والنسخ.', '📋'), className: 'rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold' }, 'نسخ ملخص التقرير'),
+            h('button', { key: 'clear', onClick: () => { setHistory([]); pushToast('تم مسح السجل', 'تم حذف جميع عمليات الصيانة من السجل.', '🧹'); }, className: 'rounded-full border border-[#ff6b7a]/40 bg-[#ff6b7a]/10 px-5 py-3 text-sm font-bold text-[#ff8f99]' }, 'مسح السجل')
+          ])
+        ]),
+        h('div', { key: 'grid', className: 'grid gap-4 lg:grid-cols-[1fr_1.4fr]' }, [
+          h('div', { key: 'stats', className: 'grid gap-3 content-start' }, [
+            h('div', { key: 'a', className: 'glass rounded-3xl p-4' }, [h('p', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'إجمالي عمليات الصيانة'), h('p', { key: 'v', className: 'mt-1 text-3xl font-black' }, history.length + 18)]),
+            h('div', { key: 'b', className: 'glass rounded-3xl p-4' }, [h('p', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'متوسط صحة الجهاز'), h('p', { key: 'v', className: 'mt-1 text-3xl font-black text-[#42e08d]' }, healthScore + '%')]),
+            h('div', { key: 'c', className: 'glass rounded-3xl p-4' }, [h('p', { key: 'l', className: 'text-xs text-[#a9b4d3]' }, 'إجمالي المساحة المحررة'), h('p', { key: 'v', className: 'mt-1 text-3xl font-black text-[#e8b84b]' }, '8.4 غ.ب')])
+          ]),
+          h('div', { key: 'list', className: 'space-y-3' }, history.length === 0 ? h('p', { key: 'empty', className: 'rounded-3xl bg-white/5 p-6 text-center text-sm text-[#a9b4d3]' }, 'لا توجد عمليات في السجل حاليًا.') : history.map(item => h('div', { key: item.id, className: 'glass flex items-center gap-3 rounded-3xl p-4' }, [
+            h('span', { key: 'i', className: 'grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#e8b84b]/12 text-[#e8b84b]' }, item.type === 'فحص' ? h(ScanLine, { size: 20 }) : item.type === 'بطارية' ? h(BatteryCharging, { size: 20 }) : item.type === 'تخزين' ? h(HardDrive, { size: 20 }) : item.type === 'أمان' ? h(ShieldCheck, { size: 20 }) : h(Zap, { size: 20 })),
+            h('div', { key: 'b', className: 'min-w-0 flex-1' }, [h('b', { key: 't', className: 'block' }, item.title), h('span', { key: 'time', className: 'text-xs text-[#a9b4d3]' }, item.time)]),
+            h('span', { key: 'score', className: 'hidden rounded-full bg-white/5 px-3 py-1 text-xs font-bold sm:block' }, item.score)
+          ])))
+        ])
+      ]);
+
+      const renderTips = () => h('section', { className: 'space-y-5' }, [
+        h('div', { key: 'head' }, [h('p', { key: 'a', className: 'text-sm text-[#e8b84b]' }, 'خبرة نوفا كير'), h('h2', { key: 'b', className: 'mt-1 text-3xl font-black' }, 'نصائح العناية بالجهاز'), h('p', { key: 'c', className: 'mt-1 text-sm text-[#a9b4d3]' }, 'عادات صغيرة تصنع فرقًا كبيرًا في عمر جهازك وأدائه.')]),
+        h('div', { key: 'grid', className: 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3' }, TIPS.map(tip => h('article', { key: tip.t, className: 'glass rounded-[1.8rem] p-5' }, [
+          h('div', { key: 'head', className: 'flex items-center justify-between' }, [h('span', { key: 'ic', className: 'text-4xl' }, tip.icon), h('span', { key: 'tag', className: 'rounded-full bg-[#e8b84b]/12 px-3 py-1 text-xs font-bold text-[#f7dc8f]' }, tip.tag)]),
+          h('h3', { key: 't', className: 'mt-4 text-lg font-black' }, tip.t),
+          h('p', { key: 'd', className: 'mt-2 text-sm leading-7 text-[#c7cede]' }, tip.d),
+          h('button', { key: 'b', onClick: () => pushToast(tip.t, 'تم حفظ النصيحة ضمن قائمة اهتماماتك لهذه الجلسة.', '💡'), className: 'mt-4 text-sm font-bold text-[#38e6d6]' }, 'حفظ النصيحة ←')
+        ])))
+      ]);
+
+      const pageRenderers = { home: renderHome, scan: renderScan, battery: renderBattery, storage: renderStorage, apps: renderApps, security: renderSecurity, booster: renderBooster, device: renderDevice, history: renderHistory, tips: renderTips };
+
+      return h('div', { dir: 'rtl', className: 'min-h-screen bg-[var(--bg)] text-[var(--text)]', style: { paddingTop: 'var(--safe-area-inset-top)' } }, [
+        h('div', { key: 'bg', className: 'pointer-events-none fixed inset-0 overflow-hidden' }, [
+          h('div', { key: 'a', className: 'absolute -top-24 right-[10%] h-72 w-72 rounded-full bg-[#4f7bff]/15 blur-3xl' }),
+          h('div', { key: 'b', className: 'absolute top-1/3 -left-24 h-72 w-72 rounded-full bg-[#e8b84b]/10 blur-3xl' })
+        ]),
+        h('div', { key: 'layout', className: 'relative mx-auto flex min-h-screen max-w-[1500px]' }, [
+          h('aside', { key: 'aside', className: 'sticky top-0 hidden h-screen w-72 shrink-0 flex-col border-l border-white/10 bg-[#080e23]/90 p-5 lg:flex' }, [
+            h('div', { key: 'brand', className: 'flex items-center gap-3' }, [
+              h('span', { key: 'logo', className: 'grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-[#ffe8a5] to-[#b67a10] text-2xl text-black' }, '✦'),
+              h('div', { key: 'txt' }, [h('b', { key: 'n', className: 'block text-lg leading-none' }, 'نوفا كير'), h('span', { key: 'e', className: 'text-[11px] tracking-[.25em] text-[#a9b4d3]' }, 'NOVACARE')]),
+              h('span', { key: 'pro', className: 'mr-auto rounded-full bg-[#42e08d]/15 px-2 py-1 text-[10px] font-bold text-[#42e08d]' }, 'PRO')
+            ]),
+            h('nav', { key: 'nav', className: 'mt-7 space-y-1 overflow-y-auto pb-4' }, navItems.map(item => h('button', { key: item.id, onClick: () => goTo(item.id), 'aria-current': page === item.id ? 'page' : undefined, className: cn('flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-bold transition', page === item.id ? 'bg-gradient-to-l from-[#e8b84b]/20 to-[#38e6d6]/10 text-white shadow-[inset_0_0_0_1px_rgba(232,184,75,.35)]' : 'text-[#a9b4d3] hover:bg-white/5 hover:text-white') }, [
+              h('span', { key: 'i', className: page === item.id ? 'text-[#e8b84b]' : '' }, h(item.Icon, { size: 20 })),
+              item.label,
+              page === item.id && h(ChevronLeft, { key: 'c', size: 16, className: 'mr-auto' })
+            ]))),
+            h('div', { key: 'promo', className: 'mt-auto rounded-3xl border border-[#e8b84b]/25 bg-gradient-to-br from-[#e8b84b]/15 to-transparent p-4' }, [
+              h('p', { key: 't', className: 'text-sm font-black' }, 'خطة العناية الذكية'),
+              h('p', { key: 'd', className: 'mt-1 text-xs leading-5 text-[#a9b4d3]' }, 'تابع صحة جهازك بفحص أسبوعي واحد.'),
+              h('button', { key: 'b', onClick: () => goTo('scan'), className: 'gold-btn mt-3 w-full rounded-full py-2 text-xs font-black' }, 'فحص أسبوعي')
+            ])
+          ]),
+          h('div', { key: 'content', className: 'min-w-0 flex-1 px-4 pb-28 pt-4 sm:px-6 sm:pt-6 lg:pb-8 lg:pl-8' }, [
+            h('header', { key: 'header', className: 'sticky top-[var(--safe-area-inset-top)] z-30 mb-5 flex items-center gap-3 rounded-3xl border border-white/10 bg-[#080e23]/85 p-3 backdrop-blur-xl sm:p-4' }, [
+              h('div', { key: 'brand-m', className: 'flex items-center gap-2 lg:hidden' }, [
+                h('span', { key: 'l', className: 'grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-[#ffe8a5] to-[#b67a10] text-xl text-black' }, '✦'),
+                h('div', { key: 't', className: 'leading-none' }, [h('b', { key: 'n' }, 'نوفا كير'), h('span', { key: 'e', className: 'block text-[10px] tracking-widest text-[#a9b4d3]' }, 'NOVACARE')])
+              ]),
+              h('div', { key: 'status', className: 'hidden items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs text-[#a9b4d3] md:flex' }, [
+                h('span', { key: 'd', className: 'h-2 w-2 rounded-full bg-[#42e08d]' }), ' جهاز متصل • Nova X5 Pro • آخر فحص اليوم'
+              ]),
+              h('div', { key: 'actions', className: 'mr-auto flex items-center gap-2' }, [
+                h('button', { key: 'bell', 'aria-label': 'الإشعارات', onClick: () => pushToast('لا توجد إشعارات جديدة', 'جهازك يعمل بشكل ممتاز حاليًا.', '🔔'), className: 'relative grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5' }, [h(Bell, { key: 'i', size: 18 }), h('span', { key: 'dot', className: 'absolute left-2 top-2 h-2 w-2 rounded-full bg-[#e8b84b]' })]),
+                h('button', { key: 'quick', onClick: () => goTo('scan'), className: 'gold-btn hidden rounded-full px-4 py-2.5 text-xs font-black sm:block' }, 'فحص سريع'),
+                h('button', { key: 'menu', onClick: () => setMenuOpen(true), 'aria-label': 'القائمة', className: 'grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 lg:hidden' }, h(Ellipsis, {}))
+              ])
+            ]),
+            h('main', { key: 'main', className: 'mx-auto max-w-[1100px]' }, pageRenderers[page]()),
+            h('footer', { key: 'footer', className: 'mt-10 border-t border-white/10 pt-5 text-center text-xs leading-6 text-[#a9b4d3]' }, 'نوفا كير — رفيقك الذكي لصيانة الهواتف الذكية • جميع الأدوات تعمل داخل المتصفح كمحاكاة تفاعلية')
+          ])
+        ]),
+        h('nav', { key: 'bottomnav', className: 'fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#080e23]/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl lg:hidden' }, h('div', { className: 'mx-auto grid max-w-md grid-cols-5' }, [
+          { id: 'home', l: 'الرئيسية', I: House }, { id: 'scan', l: 'الفحص', I: ScanLine }, { id: 'battery', l: 'البطارية', I: BatteryCharging }, { id: 'storage', l: 'التخزين', I: HardDrive }, { id: 'menu', l: 'المزيد', I: Ellipsis }
+        ].map(item => h('button', { key: item.id, onClick: () => item.id === 'menu' ? setMenuOpen(true) : goTo(item.id), 'aria-current': page === item.id ? 'page' : undefined, className: cn('flex flex-col items-center gap-1 rounded-2xl py-1.5 text-[11px] font-bold', page === item.id ? 'text-[#e8b84b]' : 'text-[#a9b4d3]') }, [
+          h('span', { key: 'i', className: page === item.id ? 'scale-110' : '' }, h(item.I, { size: 21 })),
+          item.l
+        ])))),
+        menuOpen && h('div', { key: 'overlay', className: 'fixed inset-0 z-50 bg-black/70 backdrop-blur-sm lg:hidden', onClick: () => setMenuOpen(false) }, h('div', { className: 'absolute inset-x-3 bottom-24 max-h-[70vh] overflow-y-auto rounded-[1.8rem] border border-white/10 bg-[#0c132a] p-4 shadow-2xl', onClick: e => e.stopPropagation(), role: 'dialog', 'aria-modal': 'true', 'aria-label': 'كل أدوات نوفا كير' }, [
+          h('div', { key: 'head', className: 'mb-3 flex items-center justify-between' }, [h('b', { key: 't' }, 'كل أدوات نوفا كير'), h('button', { key: 'x', onClick: () => setMenuOpen(false), 'aria-label': 'إغلاق', className: 'grid h-9 w-9 place-items-center rounded-full bg-white/10' }, h(XIcon, { size: 18 }))]),
+          h('div', { key: 'grid', className: 'grid grid-cols-2 gap-2' }, navItems.map(item => h('button', { key: item.id, onClick: () => goTo(item.id), 'aria-current': page === item.id ? 'page' : undefined, className: cn('flex items-center gap-2 rounded-2xl p-3 text-right text-sm font-bold', page === item.id ? 'bg-[#e8b84b]/15 text-[#f7dc8f]' : 'bg-white/5') }, [h(item.Icon, { key: 'i', size: 18 }), item.label])))
+        ])),
+        h('div', { key: 'toasts', role: 'status', 'aria-live': 'polite', 'aria-atomic': 'false', className: 'pointer-events-none fixed left-3 right-3 top-[calc(var(--safe-area-inset-top)+0.75rem)] z-[60] flex flex-col items-center gap-2 sm:left-auto sm:right-5 sm:w-[360px]' }, toasts.map(t => h('div', { key: t.id, className: 'pointer-events-auto w-full rounded-3xl border border-white/15 bg-[#111a38]/95 p-3 shadow-2xl backdrop-blur-xl rise' }, h('div', { className: 'flex items-start gap-3' }, [
+          h('span', { key: 'i', className: 'grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#e8b84b]/15' }, t.icon),
+          h('div', { key: 'b', className: 'min-w-0' }, [h('b', { key: 't', className: 'block text-sm' }, t.title), h('p', { key: 'd', className: 'mt-0.5 text-xs leading-5 text-[#c7cede]' }, t.desc)]),
+          h('button', { key: 'x', onClick: () => setToasts(prev => prev.filter(x => x.id !== t.id)), 'aria-label': 'إغلاق التنبيه', className: 'text-[#a9b4d3]' }, h(XIcon, { size: 16 }))
+        ]))))
+      ]);
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(h(NovaCareApp, null));
+  </script>
+</body>
+</html>
